@@ -1,7 +1,7 @@
 #let subslide = counter("subslide")
 #let later-counter = counter("later-counter")
 #let logical-slide = counter("logical-slide")
-#let repetitions = counter("repetitions")
+#let repetitions = counter("repetitions" )
 #let handout-mode = state("handout-mode", false)
 
 #let enable-handout-mode(flag) = handout-mode.update(flag)
@@ -16,7 +16,7 @@
   }
 }
 
-#let _parse-subslide-indices(s) = {
+#let _parse-subslide-indices(s) = { 
   let parts = s.split(",").map(p => p.trim())
   let parse-part(part) = {
     let match-until = part.match(regex("^-([[:digit:]]+)$"))
@@ -45,7 +45,7 @@
       panic("failed to parse visible slide idx:" + part)
     }
   }
-  parts.map(parse-part)
+    parts.map(parse-part)
 }
 
 #let _check-visible(idx, visible-subslides) = {
