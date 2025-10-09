@@ -14,6 +14,6 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Format typst files
         run: typstyle --inplace src examples tests
-      - uses: getsentry/action-git-diff-suggestions@main
+      - uses: rmburg/action-git-diff-suggestions@main
         with:
           message: "Typstyle suggested changes"
